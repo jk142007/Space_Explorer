@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Solar System - Space Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            display: flex;
+            flex-direction: column;
+            background: url("{{ url_for('static', filename='backspace.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .navbar {
+            background-color: rgba(16, 16, 16, 0.9);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #ffffff !important;
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #00ffff !important;
+        }
+
+        .section {
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 50px;
+            color: white;
+            border-radius: 10px;
+            margin-top: 100px;
+            flex: 1;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8);
+        }
+
+        .planet-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s, background-color 0.3s;
+        }
+
+        .planet-card:hover {
+            transform: scale(1.05);
+            background-color: rgba(0, 255, 255, 0.2);
+        }
+
+        footer {
+            background-color: rgba(16, 16, 16, 0.9);
+            color: white;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="home.html">Space Explorer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+            
+            </div>
+        </div>
+    </nav>
+
+    <div class="container section">
+        <h1 class="text-center mb-5">🌞 The Solar System 🌍</h1>
+
+        <div class="planet-card">
+            <h3>☀️ Sun</h3>
+            <p>The Sun is the heart of our solar system, a giant ball of hot plasma that provides energy for life on
+                Earth.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🪐 Mercury</h3>
+            <p>The smallest and fastest planet, Mercury orbits closest to the Sun and has a rocky, cratered surface.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌕 Venus</h3>
+            <p>Known for its thick, toxic atmosphere and extreme temperatures, Venus is often called Earth's sister
+                planet.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌎 Earth</h3>
+            <p>Our home planet, Earth is the only known world with life, oceans, and a breathable atmosphere.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🔴 Mars</h3>
+            <p>Called the Red Planet, Mars is a dry, dusty world with giant volcanoes and potential for past life.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🪐 Jupiter</h3>
+            <p>The largest planet, Jupiter is a gas giant known for its Great Red Spot — a massive storm bigger than
+                Earth.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌀 Saturn</h3>
+            <p>Famous for its stunning rings, Saturn is a beautiful gas giant with dozens of moons.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌀 Uranus</h3>
+            <p>Uranus is unique for its sideways rotation and pale blue color due to methane in its atmosphere.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌀 Neptune</h3>
+            <p>The farthest planet, Neptune is a cold blue gas giant with strong winds and dark storms.</p>
+        </div>
+
+        <div class="planet-card">
+            <h3>🌑 Pluto (Dwarf Planet)</h3>
+            <p>Once considered the ninth planet, Pluto is a tiny icy world in the Kuiper Belt, far beyond Neptune.</p>
+        </div>
+
+    </div>
+
+    <footer class="text-center">
+        <div>© 2025 Space Explorer | Inspired by ViewSpace | Educational Use Only</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

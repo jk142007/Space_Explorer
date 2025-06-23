@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Space Explorer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: url("{{ url_for('static', filename='backspace.jpg') }}") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+    }
+    .navbar { background-color: rgba(16, 16, 16, 0.9); }
+    .nav-link, .navbar-brand { color: white !important; }
+    .nav-link:hover { color: #00ffff !important; }
+    .container-box {
+      background-color: rgba(0, 0, 0, 0.7);
+      padding: 50px;
+      border-radius: 15px;
+      margin-top: 100px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.8);
+    }
+    h1, h3 { font-weight: bold; }
+    .form-control {
+      background-color: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+    }
+    .form-control::placeholder { color: rgba(255, 255, 255, 0.7); }
+    .form-control:focus { background-color: rgba(255, 255, 255, 0.2); color: white; }
+    .btn-primary { background-color: #00ffff; border: none; color: #111; }
+    .btn-primary:hover { background-color: #00cccc; }
+    footer { background-color: rgba(16, 16, 16, 0.95); color: white; padding: 20px 0; margin-top: 50px; }
+  </style>
+</head>
+
+<body>
+
+<nav class="navbar navbar-expand-lg fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="{{ url_for('main.home') }}">🌌 Space Explorer</a>
+    <div class="collapse navbar-collapse justify-content-end">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.home') }}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.learn') }}">Learn</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ url_for('main.resources') }}">Resources</a></li>
+        <li class="nav-item"><a class="nav-link active" href="{{ url_for('main.about') }}">About</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container container-box">
+  <h1>About Space Explorer</h1>
+  <p>
+    Space Explorer is an educational platform inspired by ViewSpace. Our goal is to make astronomy accessible 
+    and exciting for everyone. Explore planets, galaxies, and the unknown mysteries of our Universe.
+  </p>
+
+  <h3 class="mt-4">Contact Information</h3>
+  <p><strong>Email:</strong> jambukiyakhushali@gmail.com</p>
+  <p><strong>Phone:</strong> +91-8799207487</p> <!-- 🔥 Update your real number here -->
+
+  <h3 class="mt-4">Or Send us a Message</h3>
+
+  <form method="POST" action="{{ url_for('main.about') }}">
+    <div class="mb-3">
+      <input type="text" class="form-control" name="name" placeholder="Your Name" required>
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+    </div>
+    <div class="mb-3">
+      <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">Send Message</button>
+  </form>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+    {% if messages %}
+      {% for category, message in messages %}
+        <div class="alert alert-success mt-3">{{ message }}</div>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+</div>
+
+<footer class="text-center">
+  <div>© 2025 Space Explorer | Educational Use Only</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

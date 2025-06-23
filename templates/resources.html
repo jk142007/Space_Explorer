@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resources - Space Explorer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background: url("{{ url_for('static', filename='backspace.jpg') }}") no-repeat center center fixed;
+            background-size: cover;
+            color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+        }
+
+        .navbar {
+            background-color: rgba(16, 16, 16, 0.95);
+        }
+
+        .navbar-brand,
+        .nav-link {
+            color: #ffffff !important;
+            font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+
+        .navbar-brand:hover,
+        .nav-link:hover {
+            color: #00ffff !important;
+        }
+
+        .content {
+            flex: 1;
+            padding-top: 150px;
+        }
+
+        h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+        }
+
+        .lead {
+            font-size: 1.3rem;
+            margin-bottom: 40px;
+        }
+
+        .resource-btn {
+            display: block;
+            margin: 15px auto;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            background: linear-gradient(135deg, #00ffff, #0066ff);
+            color: #111;
+            transition: all 0.3s ease;
+            width: 300px;
+            text-decoration: none;
+        }
+
+        .resource-btn:hover {
+            transform: translateY(-5px);
+            background: linear-gradient(135deg, #00cccc, #0033cc);
+            color: #fff;
+        }
+
+        footer {
+            background-color: rgba(16, 16, 16, 0.95);
+            color: white;
+            padding: 20px 0;
+            margin-top: auto;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('main.home') }}">🌌 Space Explorer</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon bg-light"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.home') }}">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="{{ url_for('main.resources') }}">Resources</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.learn') }}">Learn</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ url_for('main.about') }}">About</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container text-center content">
+        <h1>Space Resources 🔭</h1>
+        <p class="lead">Here are some excellent resources for you to explore space in more depth:</p>
+
+        <a href="https://solarsystem.nasa.gov/" target="_blank" class="resource-btn">NASA Solar System Exploration</a>
+        <a href="https://www.spacetelescope.org/" target="_blank" class="resource-btn">Hubble Space Telescope - ESA</a>
+        <a href="https://www.jpl.nasa.gov/" target="_blank" class="resource-btn">NASA Jet Propulsion Laboratory (JPL)</a>
+        <a href="https://skyandtelescope.org/" target="_blank" class="resource-btn">Sky & Telescope</a>
+        <a href="https://www.viewspace.org/" target="_blank" class="resource-btn">ViewSpace Official Website</a>
+    </div>
+
+    <footer class="text-center">
+        <div>© 2025 Space Explorer | Inspired by ViewSpace | Educational Use Only</div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
